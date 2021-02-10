@@ -1,0 +1,11 @@
+[Unit]
+Description=ZeroTier Cli
+After=zerotier-one.service
+Wants=zerotier-one.service
+
+[Service]
+ExecStart=/usr/bin/zerotier-run.sh join
+
+[Install]
+RequiredBy=zerotier-one.service
+WantedBy=multi-user.target
